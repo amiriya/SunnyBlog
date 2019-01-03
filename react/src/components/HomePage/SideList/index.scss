@@ -1,0 +1,44 @@
+.homepage{
+    .right{
+        .slide{
+            margin:10px 0; 
+            min-height: 100px;
+            position: relative;
+            background: #fefefe ;
+            border: 1px solid #fff;
+            border-radius: 2px;
+
+            h3.title{
+                font-weight: 400;
+                height: 36px;
+                line-height: 36px;
+                font-size: 14px;
+                color: #666;
+                border-bottom: 1px solid #eae9e9;
+                padding: 0 10px;
+            }
+
+            ul{
+                margin: 0 10px 10px;
+
+                li{
+                    background: url("/images/queen_32.png") no-repeat 4px 9px;
+                    background-size: 13px 13px;
+                    padding-left: 20px;
+                    border-bottom: 1px solid #ededed;
+
+                    a{
+                        font-size: 14px;
+                        line-height: 30px;
+                        color: #777;
+
+                        &:hover{
+                            color: #2472c1;
+                            padding-left: 10px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

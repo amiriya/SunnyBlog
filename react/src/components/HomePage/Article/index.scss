@@ -1,0 +1,60 @@
+.homepage{
+    .article{
+        margin: 10px 0;
+        background: #fff;
+        padding: 25px;
+        border-radius: 2px;
+
+        .title{
+            font-weight: 400;
+            font-size:20px; 
+            margin-bottom: 10px;
+        }
+
+        .detail{
+            position: relative;
+            overflow: hidden;
+
+            .img-wrapper{
+                height: 200px;
+                padding: 2px;
+                border:1px solid #e2e2e2;
+                float: left;
+                margin-right: 16px;
+
+                img{
+                    height: 194px;
+                    float: left;
+                    width: auto;
+                }
+            }
+
+            .intro{
+                p{
+                    text-align: justify;
+                    margin-bottom: 16px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    /* 多行溢出处理 */
+                    overflow : hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                }
+
+                span{
+                    float: right;
+                    padding-right: 15px;
+                    color:#2472c1;
+                    font-weight: bold;
+                    font-size: 14px;
+
+                    &:hover{
+                        color: #036;
+                    }
+                }
+            }
+        }
+    }
+}
