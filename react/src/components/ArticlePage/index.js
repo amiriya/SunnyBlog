@@ -3,6 +3,8 @@ import './index.scss';
 
 import { articles } from '../../libs/articlePgaeData'
 
+import ReactMarkdown from 'react-markdown';
+
 class ArticlePage extends Component {
   constructor(props){
     super(props);
@@ -22,7 +24,7 @@ class ArticlePage extends Component {
   }
 
   render() {
-    const {title, author, createDate, browserCount, labels, paragraphs} = this.state.article;
+    const {title, author, createDate, browserCount, labels, markdownContent} = this.state.article;
 
     return (
       <div className='article-page'>
@@ -45,9 +47,7 @@ class ArticlePage extends Component {
           </span>}
         </div> }
         <div className="article-content">
-            {paragraphs && paragraphs.length > 0 && paragraphs.map((paragraph, index) => {
-              return (<p key={index}>{paragraph}</p>);
-            })}
+          <ReactMarkdown source={markdownContent} />
         </div>
       </div>
     );
