@@ -1,2 +1,6 @@
 react/node_modules/*
 react/.vscode/*
+
+.vscode/*
+node_modules/*
+/dist
