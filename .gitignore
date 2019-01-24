@@ -2,5 +2,5 @@ react/node_modules/*
 react/.vscode/*
 
 .vscode/*
-node_modules/*
-/dist
+server/node_modules/*
+server/dist
