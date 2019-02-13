@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
 
-import { articles } from '../../libs/articlePgaeData'
-
 import ReactMarkdown from 'react-markdown';
 
 class ArticlePage extends Component {
@@ -16,10 +14,20 @@ class ArticlePage extends Component {
 
   componentDidMount(){
     const url = this.props.url;
-    const article = articles[url] ? articles[url] : '';
 
-    article && this.setState({
-      article: article
+    fetch(`/article?articleId=${url}`, {method: 'GET'})
+    .then(res => res.json())
+    .then(
+      (res) => {
+        let { retCode, article } = res;
+        if(retCode === 0){
+          article && this.setState({
+            article: article
+          });
+        }
+      }
+    ).catch((e) => {
+      console.log(`something goes wrong! details: ${e}`);
     });
   }
 

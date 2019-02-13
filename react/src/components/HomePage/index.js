@@ -4,8 +4,6 @@ import Article from './Article';
 import SideList from './SideList';
 import Whisper from './Whisper';
 
-import { articles, hotArticles, recommendArticles } from '../../libs/homePgaeData'
-
 class HomePage extends Component {
   constructor(props){
     super(props);
@@ -18,10 +16,19 @@ class HomePage extends Component {
   }
 
   componentDidMount(){
-    this.setState({
-      articles: articles,
-      hotArticles: hotArticles,
-      recommendArticles: recommendArticles
+    fetch(`/index`, {method: 'GET'})
+    .then(res => res.json()).then(
+      (res) => {
+        let { articles, hotArticles, recommendArticles } = res;
+
+        this.setState({
+          articles: articles,
+          hotArticles: hotArticles,
+          recommendArticles: recommendArticles
+        });
+      }
+    ).catch((e) => {
+      console.log(`something goes wrong! details: ${e}`);
     });
   }
 
