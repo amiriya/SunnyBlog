@@ -24,5 +24,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://127.0.0.1:36000/"
+  "proxy": "http://127.0.0.1:36000/",
+  "devDependencies": {
+    "vconsole": "^3.3.0"
+  }
 }
